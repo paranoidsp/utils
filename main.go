@@ -18,6 +18,9 @@ type Config struct {
 var SecretConfig Config
 
 func init () {
+
+    // Read from standard internal secrets path
+    // Expected to exist on all internal projects for now
     configFile, err := ioutil.ReadFile("secrets/notify-config.json")
     if err != nil {
         panic(err)
